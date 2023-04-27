@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Irish RTSO Calculator</title>
+    <style>#calculator{display:flex;flex-direction:column;align-items:center;background-image:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url('http://clipart-library.com/new_gallery/9-99024_earn-money-png-stacks-of-money-png.png');background-repeat:no-repeat;background-position:center;background-size:cover}#inputs{display:flex;flex-direction:column}#inputs input{padding:10px;margin:10px;background-color:#2ecc71;color:#fff;font-size:1.5rem;border-radius:10px}#output{padding:10px;margin:10px;width:600px;height:200px;border-radius:5px;background-color:#2ecc71;color:#fff;font-size:1.2rem}button{padding:10px;margin:10px;background-color:#2ecc71;color:#fff;font-size:1.5rem;border-radius:10px}h1{color:#2ecc71;font-size:3rem;font-weight:bold}</style>
+</head>
+<body>
+    <div id="calculator">
+        <h1>Irish RTSO Calculator</h1>
+        <div id="inputs" style="text-align: center; font-size: 45px; color: #2ecc71;">
+            Strike Price: <input type="text" id="strike_price" style="background-color: #2ecc71; color: #ffffff;" /> 
+            Market Value: <input type="text" id="market_value" style="background-color: #2ecc71; color: #ffffff;" /> 
+            Share Count: <input type="text" id="share_count" style="background-color: #2ecc71; color: #ffffff;" />
+        </div>
+        <button onclick="calculateRTSO()">Calculate</button>
+        <div id="output"></div>
+        <div id="copyright" style="text-align: center; font-size: 25px; color: #2ecc71;"><a href="https://github.com/DrMarkDunne/Irish-RTSO-Calculator">© 2023 DrMarkDunne</a></div>
+    </div>
+    <script>function calculateRTSO(e){var t=parseFloat(document.getElementById("strike_price").value),a=parseFloat(document.getElementById("market_value").value),n=parseFloat(document.getElementById("share_count").value),r=.4,o=.08,c=.04,i=parseFloat(a*n),l=parseFloat(a-t),s=parseFloat(l*n),d=l*r,u=l*o,p=l*c,m=d+u+p,v=parseFloat(m*n);document.getElementById("output").innerHTML="Total income from "+n+" share sold: €"+i.toFixed(2)+"<br />Gross profit: €"+s.toFixed(2)+"<br />Total RTSO owed on profit: €"+v.toFixed(2)+"<br /><br />Net profit: €"+(s-v).toFixed(2)}</script>
+</body>
+</html>
